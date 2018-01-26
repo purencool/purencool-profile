@@ -14,7 +14,7 @@
    "require" : {
       "drupal/admin_toolbar" : "*",
       "drupal/ctools" : "*",
-      "drupal/pathauto" : "*"
+      "drupal/pathauto" : "*",
       "drupal/token" : "*"
    }
 }
