@@ -1,6 +1,6 @@
 {
   "name": "drupal/purencool",
-  "type": "drupal-module",
+  "type": "drupal-profile",
   "description": "Small organization solution.",
   "homepage": "http://drupal.org/project/purencool",
   "license": "GPL-3.0+",
