@@ -46,6 +46,7 @@ dependencies:
 
   # Contributed modules
   - admin_toolbar
+  - metatag
 
 themes:
   - bootstrap

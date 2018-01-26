@@ -15,6 +15,7 @@
 		"drupal/admin_toolbar": "*",
 		"drupal/bootstrap": "*",
 		"drupal/ctools": "*",
+		"drupal/metatag": "*",
 		"drupal/pathauto": "*",
 		"drupal/token": "*"
 	}
