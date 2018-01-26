@@ -1,7 +1,0 @@
-global-styling:
-  css:
-    theme:
-      //fonts.googleapis.com/css?family=Poppins: { type: external }
-      //fonts.googleapis.com/css?family=Karla: { type: external }
-      css/styles.css: {}
-      css/maintenance-style.css: {}
