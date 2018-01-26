@@ -1,0 +1,189 @@
+/** core elements **/
+body{
+  font-family: $baseFontType;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width:100%;
+  height:auto;
+}
+
+
+
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  color: $baseColor;
+  font-size: 14px;
+  line-height: 26px;
+}
+
+
+/** block elements **/
+.d-inline {
+  display: inline!important;
+}
+
+.d-inline > div{
+  display: block;
+  margin-bottom:10px;
+}
+
+
+.d-flex {
+  display: flex;
+}
+
+
+.m-auto {
+  margin:auto 0;
+}
+
+.m-none {
+  margin:0;
+}
+
+.m-none-a {
+  a {
+    margin:0;
+  }
+}
+
+.f-none{
+  float:none;
+}
+
+/**
+ * IE support
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  #content-area {
+    flex: inherit;
+    -ms-flex: inherit;
+  }
+
+}
+@supports (-ms-accelerator:true) {
+  #content-area {
+    flex: inherit;
+    -ms-flex: inherit;
+  }
+}
+#content-area {
+  flex: inherit\9;
+  -ms-flex: inherit\9;
+}
+
+.i-height{
+  height:inherit;
+  max-height:inherit;
+}
+
+
+/*
+ * Core editorials tools
+ */
+.contextual-links a {
+  color: black !important;
+}
+
+.block-place-region a.button {
+  display: block !important;
+  margin: auto !important;
+}
+
+.ui-widget-content a {
+  text-decoration: underline;
+  color: $secondMenuColor;
+}
+
+
+details.vertical-tabs__pane {
+      padding: 10px;
+
+}
+
+.ui-widget textarea {
+  width: 100%;
+}
+
+/** short code elements **/
+.short_code_area {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+
+/**  automation classes **/
+.dropdown {
+  display: none;
+}
+
+.open {
+  display: block;
+}
+
+.dropdown.open {
+  display: block;
+}
+
+
+
+
+
+.divider{
+
+}
+.no_padding{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.no_margin{
+  margin: 0px;
+}
+
+/* temp styles  */
+.purencool-vision-filter {
+  display: none;
+}
+
+
+
+/*****BG**/
+
+.fixed_bg{
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/*********OVERLAY***********/
+.overlay{
+  width: 100%;
+  height: 100%;
+}
+.black_overlay{
+  background-color: rgba(0,0,0,.8);
+}
+
+
+@include mobile-break-points('phone', "min") {
+  .d-inline > div{
+    display: inline-block;
+    margin-bottom:0;
+  }
+
+  .float-left {
+    float: none;
+  }
+
+  .d-float-right{
+    float: right;
+  }
+}

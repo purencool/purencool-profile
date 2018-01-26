@@ -1,0 +1,65 @@
+{% if not page %}
+{% else %}
+	{% if node.field_gallery_style is not empty %}
+    	{% set gallery_style = node.field_gallery_style.value %}
+	{% else %}
+		{% set gallery_style = 'grid2col' %}
+	{% endif %}
+	{% if gallery_style == 'grid1col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-12">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ img.entity.fileuri|image_style_url('image_1140x760') }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% elseif gallery_style == 'grid2col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-6">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ img.entity.fileuri|image_style_url('image_700x467') }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% elseif gallery_style == 'grid3col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-4">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ img.entity.fileuri|image_style_url('image_700x467') }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% elseif gallery_style == 'grid4col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-3">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ img.entity.fileuri|image_style_url('image_700x467') }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% elseif gallery_style == 'masonry2col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-6 item">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ file_url(img.entity.fileuri) }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% elseif gallery_style == 'masonry3col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-4 item">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ file_url(img.entity.fileuri) }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}
+	{% elseif gallery_style == 'masonry4col' %}
+		{% for img in node.field_images %}
+			<div class="col-md-3 item">
+				<div class="single_gallery_item">
+					<a class="example-image-link" href="{{ file_url(img.entity.fileuri) }}" data-lightbox="example-set" data-title="{{ img.alt }}"><img src="{{ file_url(img.entity.fileuri) }}" alt="{{ img.alt }}"></a>
+				</div>
+			</div>
+		{% endfor %}	
+	{% endif %}
+{% endif %}

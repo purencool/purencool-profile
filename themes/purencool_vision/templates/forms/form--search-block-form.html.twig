@@ -1,0 +1,18 @@
+{#
+/**
+ * @file
+ * Default theme implementation for a 'form' element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+<form{{ attributes.addClass('search-block-form') }}>
+	<div class="form-group">
+  		{{ children|render|str_replace('class="form-search"', 'class="form-search form-control"')|str_replace('maxlength="128"', 'maxlength="128" placeholder="Search Here ..."')|str_replace('value="Search"', 'value=""')|raw }}
+  		<i class="pe-7s-search"></i>
+  	</div>
+</form>

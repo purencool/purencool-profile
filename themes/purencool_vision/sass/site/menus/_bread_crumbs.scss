@@ -1,0 +1,43 @@
+.page-header-breadcrumb{
+  text-align: left;
+  ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul li{
+    display: inline-block;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+    letter-spacing: 1px;
+    position: relative;
+    color: $baseColor;
+  }
+  ul li:after{
+    content: "|";
+    position: absolute;
+    top: 0;
+    right: -5px;
+    color: $baseColor;
+  }
+  ul li:last-child{
+    padding-right: 0;
+  }
+  ul li:last-child:after{
+    opacity: 0;
+  }
+  ul li a{
+    font-size: 12px;
+    text-decoration: none;
+    color: $baseColor;
+  }
+}
+
+@include mobile-break-points('tablet', "min") {
+  .page-header-breadcrumb {
+    float: right;
+    text-align: right;
+  }
+
+}

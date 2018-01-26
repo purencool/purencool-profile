@@ -1,0 +1,216 @@
+{#
+/**
+ * @file
+ * Theme override to display a block.
+ *
+ * Available variables:
+ * - plugin_id: The ID of the block implementation.
+ * - label: The configured label of the block if visible.
+ * - configuration: A list of the block's configuration values.
+ *   - label: The configured label for the block.
+ *   - label_display: The display settings for the label.
+ *   - provider: The module or other provider that provided this block plugin.
+ *   - Block plugin specific settings will also be stored here.
+ * - content: The content of this block.
+ * - attributes: array of HTML attributes populated by modules, intended to
+ *   be added to the main container tag of this template.
+ *   - id: A valid HTML ID and guaranteed unique.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ *
+ * @see template_preprocess_block()
+ */
+#}
+{% set classes = [
+'block',
+'block-' ~ configuration.provider|clean_class,
+'block-' ~ plugin_id|clean_class,
+] %}
+
+{% set title_order = content.field_checkbox.value|striptags %}
+{% set small_title = content.field_small_title|render|striptags|trim %}
+{% set title1 = content.field_hi_light_title|render|striptags|trim %}
+{% set title2 = content.field_hi_light_title_two|render|striptags|trim %}
+{% set title3 = content.field_hi_light_title_three|render|striptags|trim %}
+{% set title4 = content.field_hi_light_title_four|render|striptags|trim %}
+
+
+
+
+{% set image_size = 'small' %}
+{% if image_size   == 'small' %}
+    {% set image_size = 's-image' %}
+{% elseif image_size   == 'medium' %}
+    {% set image_size = 'm-image' %}
+{% elseif image_size   == 'large' %}
+    {% set image_size = 'l-image' %}
+{% else %}
+    {% set image_size = '' %}
+{% endif %}
+
+
+{% set image_position  = 'left' %}
+{% if image_position  == 'left' %}
+    {% set image_class = 'i-pull-left' %}
+    {% set text_class = 't-pull-left' %}
+{% elseif image_position  == 'right' %}
+    {% set image_class = 'i-pull-right' %}
+    {% set text_class = 't-pull-right' %}
+{% elseif image_position  == 'center' %}
+    {% set image_class = 'i-pull-center' %}
+    {% set text_class = 't-pull-center' %}
+{% else %}
+    {% set image_class = '' %}
+    {% set text_class = '' %}
+{% endif %}
+
+
+<section id="{{ section_custom_id }}" class="ohl">
+    <div{{ attributes.addClass(classes,'container') }}>
+        <div class="">
+            <header class="block-section-header">
+                <div class="section-title text-center">
+                    {% if (small_title is not null ) and  title_order == true %}
+                        <h4> id="our-hilights-small-title" class="text-center container">
+                            {{ content.field_small_title|render|striptags|trim }}
+                        </h4>
+                    {% endif %}
+                    {{ title_prefix }}
+                    {% if label %}
+                        <h2{{ title_attributes }} class="text-center">{{ label }}</h2>
+                    {% endif %}
+                    {{ title_suffix }}
+                </div>
+            </header>
+            {% block content %}
+                {% if  (title1 is not null ) and (title2 is not null) and (title3 is not null) and (title4 is not null) %}
+                    <div class="clear-fix">
+                        <div class="widget col-md-3 col-sm-6 p-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title|render|striptags|trim|raw }}</h4>
+                                {{ content.field_hi_light_text|raw  }}
+                            </div>
+                        </div>
+                        <div class="widget col-md-3 col-sm-6 p-mob-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image_two %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image_two }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text  {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title_two|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text_two|raw  }}
+                            </div>
+                        </div>
+                        <div class="widget col-md-3 col-sm-6 p-mob-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image_three %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image_three }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title_three|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text_three|raw  }}
+                            </div>
+                        </div>
+                        <div class="widget col-md-3 col-sm-6 p-mob-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image_four %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image_four }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title_four|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text_four|raw  }}
+                            </div>
+                        </div>
+                    </div>
+                {% elseif  (title1 is not null ) and (title2 is not null) and (title3 is not null) %}
+                    <div class=" container">
+                        <div class="widget col-md-4 col-sm-6 p-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text|raw  }}
+                            </div>
+                        </div>
+                        <div class="widget col-md-4 col-sm-6 p-mob-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image_two %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image_two }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title_two|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text_two|raw  }}
+                            </div>
+                        </div>
+                        <div class="widget col-md-4 col-sm-6 p-mob-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image_three %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image_three }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title_three|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text_three|raw  }}
+                            </div>
+                        </div>
+                    </div>
+                {% elseif  (title1 is not null ) and (title2 is not null) %}
+                    <div class="container ">
+                        <div class="widget col-md-6 col-sm-6 p-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text|raw  }}
+                            </div>
+                        </div>
+                        <div class="widget col-md-6 col-sm-6 p-mob-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image %}
+                                <div class="w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image_two }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title_two|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text_two|raw  }}
+                            </div>
+                        </div>
+                    </div>
+                {% elseif (title1 is not null ) %}
+                    <div class=" container">
+                        <div class="widget col-md-4 col-sm-6 p-none-left p-mob-none-right">
+                            {% if content.field_hi_light_image %}
+                                <div class=" w-image {{ image_class }} {{ image_size }}">
+                                    {{ content.field_hi_light_image }}
+                                </div>
+                            {% endif %}
+                            <div class="w-text {{ text_class }}">
+                                <h4>{{ content.field_hi_light_title|render|striptags|trim|raw  }}</h4>
+                                {{ content.field_hi_light_text|raw  }}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endblock %}
+        </div>
+    </div>
+</section>

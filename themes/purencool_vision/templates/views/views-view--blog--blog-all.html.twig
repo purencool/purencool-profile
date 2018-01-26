@@ -1,0 +1,33 @@
+{{ rows }}
+{% set blog_layout_temp = 'layout'|get_path_param %}
+{% if blog_layout_temp %}
+	{% set blog_layout = blog_layout_temp %}
+{% endif %}
+{% if blog_layout is empty %}
+	{% set blog_layout = 'fullwidth' %}
+{% endif %}
+{% set blog_style_temp = 'style'|get_path_param %}
+{% if blog_style_temp %}
+	{% set blog_style = blog_style_temp %}
+{% endif %}
+{% if blog_style is empty %}
+	{% set blog_style = 'grid2cols' %}
+{% endif %}
+{% if blog_style == 'masonry2cols' or blog_style == 'masonry3cols' or blog_style == 'masonry4cols' %}
+	{% set masonry = 'item' %}
+{% else %}
+	{% set masonry = '' %}
+{% endif %}
+{% if blog_layout == 'fullwidth' and pager %}
+<div class="col-md-12 text-center {{ masonry }}">
+	<div class="pagination_area">
+		{{ pager }}
+	</div>
+</div>
+{% elseif pager %}
+<div class="col-md-12 {{ masonry }}">
+	<div class="pagination_area">
+		{{ pager }}
+	</div>
+</div>
+{% endif %}

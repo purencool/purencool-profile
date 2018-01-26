@@ -1,0 +1,129 @@
+/*COMMENT*/
+/*COMMENT*/
+.comment_section{
+  padding-top: 30px;
+}
+.comment_section h6{
+  font-size: 16px;
+  color: #333;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+.comment_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 60px;
+}
+.single-comment {
+  position: relative;
+  margin-bottom: 100px;
+}
+.comment_image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.comment_image img {
+  width: 100%;
+}
+.comment_info {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  padding-left: 120px
+}
+.comment_info h2 {
+  margin: 0px;
+  margin-bottom: 5px;
+}
+.comment_info h2 a {
+  font-size: 14px;
+  color: #333333;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.comment_info h2 a {} .comment_info h4 {
+                        font-size: 14px;
+                        color: #7a7a7a;
+                        font-weight: 700;
+                        margin-top: 5px;
+                      }
+.comment_info p {
+  color: #585858;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 10px;
+}
+.reply,
+.reply:hover,
+.reply:focus,
+.reply:visited,
+.reply:active {
+  color: #333333;
+  font-weight: 600;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.children li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-left: 40px;
+}
+.children .comment_info {
+  padding-left: 160px;
+  top: -20px;
+  position: absolute;
+}
+.children {
+  margin-top: 100px;
+}
+@media(max-width: 768px) {
+  .single-comment {
+    position: relative;
+    margin-bottom: 180px;
+  }
+  .children li {
+    margin-top: 220px;
+  }
+  .children .comment_info {
+    top: -50px;
+  }
+}
+@media(max-width: 450px) {
+  .single-comment {
+    position: relative;
+    margin-bottom: 220px;
+  }
+  .children li {
+    margin-top: 260px;
+  }
+  .children .comment_info {
+    top: -50px;
+  }
+}
+@media(max-width: 390px) {
+  .comment_info {
+    padding-left: 70px;
+  }
+  .comment_image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .single-comment {
+    margin-bottom: 300px;
+  }
+  .children .comment_info {
+    padding-left: 110px;
+  }
+}

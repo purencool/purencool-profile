@@ -1,0 +1,51 @@
+
+
+/*---------------------------------------
+FUNFACTS
+-----------------------------------------*/
+.fun_facts_on_bg .overlay{
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+.single_facts{}
+.single_facts i{
+  color: #1cbac8;
+  font-size: 40px;
+}
+.single_facts h2{
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  margin: 0px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+.single_facts p{
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #CACACA;
+  letter-spacing: 2px;
+  margin: 0px;
+}
+@media(max-width: 991px){
+  .single_facts{
+    padding-bottom: 40px;
+  }
+}
+.fun_facts_solid_bg{
+  background-color: #222;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.fun_type_two{
+  background-color: #f8f8f8;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.fun_type_two .single_facts h2{
+  color: #333;
+}
+.fun_type_two .single_facts p{
+  color: #585858;
+}

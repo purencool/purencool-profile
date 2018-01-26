@@ -1,0 +1,10 @@
+<?php
+/**
+ * Implements hook_preprocess_page().
+ */
+function purencool_vision_sub_theme_preprocess_page(&$variables){
+   $path = explode('//',theme_get_setting('logo')['path']);
+   if(count($path) > 1) {
+     $variables['logo'] = '../sites/default/files/' . $path[1];
+   }
+}

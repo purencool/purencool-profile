@@ -1,0 +1,83 @@
+/*APP LANDING*/
+.app.hero_section{
+  padding-top: 175px;
+  padding-bottom: 100px;
+}
+.app_landing{
+}
+.app_hero{
+  padding-top: 150px;
+}
+.app_hero h3{
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.app_hero p{
+  font-size: 14px;
+  font-weight: 400;
+  color: #CACACA;
+  margin-bottom: 30px;
+}
+.landing_app_image{}
+.landing_app_image img{
+  width: 100%;
+}
+.download{
+  text-align: right;
+}
+.download ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.download ul li{
+  display: inline;
+}
+.download ul li a{
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 1px solid #fff;
+  padding: 15px;
+  display: inline-block;
+  text-decoration: none;
+  width: 200px;
+  text-align: center;
+  margin-left: 10px;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.download ul li a i{
+  padding-right: 10px;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.download ul li a:hover{
+  background-color: #fff;
+  color: #333;
+}
+.download ul li a:hover i{
+  color: #1cbac8;
+}
+
+@media(max-width: 1200px) and (min-width: 991px){
+  .right_m_features{
+    padding-top: 0px;
+  }
+  .left_m_features{
+    padding-top: 0px;
+  }
+}
+@media(max-width: 768px){
+  .landing_app_image{
+    display: none;
+  }
+}
+

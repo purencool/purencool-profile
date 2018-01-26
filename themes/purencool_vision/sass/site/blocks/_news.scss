@@ -1,0 +1,37 @@
+.news{
+  padding-bottom: 120px;
+}
+
+@media(max-width: 991px){
+  .news{
+    padding-bottom: 50px;
+  }
+}
+
+//-- @todo not sure what this does.
+.view_moew, .view_moew:focus, .view_moew:active, .view_moew:visited{
+  background-color: #333;
+  color: #fff;
+  font-size: 12px;
+  text-transform: uppercase;
+  box-shadow: none;
+  outline: 0 !important;
+  border-radius: 0px;
+  padding: 9px 18px;
+  margin-top: 80px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: 2px solid #333;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+  padding: 10px 25px;
+}
+.view_moew:hover{
+  color: #333;
+  border: 2px solid #333;
+  background-color: #fff;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}

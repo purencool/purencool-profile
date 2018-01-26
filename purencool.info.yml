@@ -1,0 +1,51 @@
+name: Purencool organization
+description: This profile gives a lot of functionalty that is used frequently in a small organization.
+type: profile
+description: ''
+version: '8.x-4.0'
+core: '8.x'
+project: 'Purencool'
+
+dependencies:
+  - node
+  - history
+  - block
+  - breakpoint
+  - ckeditor
+  - color
+  - config
+  - contextual
+  - contact
+  - menu_link_content
+  - datetime
+  - block_content
+  - block_place
+  - quickedit
+  - editor
+  - help
+  - image
+  - menu_ui
+  - options
+  - path
+  - page_cache
+  - dynamic_page_cache
+  - taxonomy
+  - dblog
+  - search
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  - tour
+  - automated_cron
+  - responsive_image
+  - telephone
+
+themes:
+  - purencool_vision
+  - seven
+
+

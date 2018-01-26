@@ -1,0 +1,73 @@
+/*Comment Form*/
+.comment_form{
+  padding-bottom: 80px;
+}
+.comment_form .form-group{}
+.comment_form .form-group .form-control, .form-group .form-control:focus{
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: 0px;
+  box-shadow: none;
+  outline: 0;
+  height: 40px;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.comment_form .form-group .form-control:focus{
+  border: 1px solid #333;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.comment_form form .form-control::-webkit-input-placeholder {
+  color: #585858;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+.comment_form form .form-control:-moz-placeholder {
+  color: #585858;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+.comment_form form .form-control::-moz-placeholder {
+  color: #585858;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+.comment_form form .form-control:-ms-input-placeholder {
+  color: #585858;
+  font-size: 12px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+#Comment{
+  height: 100px;
+  resize:none;
+}
+.cmnt_sbt, .cmnt_sbt:active, .cmnt_sbt:focus, .cmnt_sbt:visited{
+  color: #fff;
+  background-color: #333;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 0;
+  padding: 10px 20px;
+  letter-spacing: 1px;
+  box-shadow: none;
+  outline: 0;
+  border: 2px solid #333;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.cmnt_sbt:hover{
+  background-color: transparent;
+  border: 2px solid #333;
+  color: #333;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}

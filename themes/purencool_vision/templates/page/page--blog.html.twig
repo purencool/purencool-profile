@@ -1,0 +1,246 @@
+{% set blog_layout_temp = 'layout'|get_path_param %}
+{% if blog_layout_temp %}
+    {% set blog_layout = blog_layout_temp %}
+{% endif %}
+{% set blog_style_temp = 'style'|get_path_param %}
+{% if blog_style_temp %}
+    {% set blog_style = blog_style_temp %}
+{% endif %}
+{% if blog_layout is empty %}
+    {% set blog_layout = 'fullwidth' %}
+{% endif %}
+{% if blog_style is empty %}
+    {% set blog_style = 'grid2cols' %}
+{% endif %}
+{% if blog_menu_style is empty %}
+    {% set menu_style = blog_menu_style %}
+{% endif %}
+{% if blog_slogan is not empty %}
+    {% set page_slogan = blog_slogan %}
+{% endif %}
+{% if blog_page_header_class is not empty %}
+    {% set page_header_class = blog_page_header_class %}
+{% endif %}
+{% if blog_page_header_bgcolor is not empty %}
+    {% set page_header_bgcolor = blog_page_header_bgcolor %}
+{% endif %}
+{% if blog_page_title_bgimage is not empty %}
+    {% set page_title_bgimage = blog_page_title_bgimage %}
+{% endif %}
+
+
+<header>
+    <!-- START NAV MENU -->
+    <nav class="navbar-fixed-top {{ nav_class }}">
+        {% if page.top_menu %}
+            {{ page.top_menu }}
+        {% endif %}
+        <div class="w-main-menu">
+            <div id="main-menu" class="container p-mob-none-left p-mob-none-right">
+                {% if logo %}
+                    <a href="{{ front_page }}" class="branding"
+                       {% if fixed_logo %}data-fixed-logo="{{ fixed_logo }}"{% endif %}>
+                        <img class="changeable" src="{{ logo }}" alt="{{ 'Home'|t }}">
+                    </a>
+                {% endif %}
+                {% if page.main_menu %}
+                    {{ page.main_menu }}
+                {% endif %}
+                <div class="right-mp-menu hide">
+                    <ul>
+                        {% if page.shopping_cart %}
+                            <li class="cart">
+                                <a href="#" class="js-stop-click"><i class="fa fa-shopping-cart"></i>{{ 'CART'|t }}
+                                    (<span id="cart-items">0</span>)</a>
+                                {{ page.shopping_cart }}
+                            </li>
+                        {% endif %}
+                        <li><a id="filter-search" href="#" class="js-stop-click"><i
+                                        class="fa fa-search"></i>{{ 'SEARCH'|t }}</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END NAV BAR -->
+    <!-- START PAGE HEADER -->
+    {% if page_title_bgimage is not empty %}
+        {% set page_header_class = page_header_class ~ ' navi-bg-image' %}
+    {% elseif page_header_bgcolor is not empty %}
+        {% set page_header_class = page_header_class ~ ' bg-color' %}
+    {% endif %}
+    {% if page_header_enable == 'on' %}
+        <div class="page-header {{ page_header_class }}"
+             {% if page_title_bgimage is not empty %}data-bg-image="{{ page_title_bgimage }}"{% endif %} {% if page_header_bgcolor is not empty %}data-bg-color="#{{ page_header_bgcolor }}"{% endif %}>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="page-header-title">
+                            <h2>{{ current_page_title }}</h2>
+                            <p>{{ page_slogan }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <!-- START BREADCUMB -->
+                        {% if page.breadcrumb %}
+                            <div class="page-header-breadcrumb">
+                                {{ page.breadcrumb }}
+                            </div>
+                        {% endif %}
+                        <!-- END BREADCUMB -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE HEADER -->
+    {% endif %}
+    <!-- END NAV BAR -->
+</header>
+
+
+{% if page.site_feedback %}
+    {{ page.site_feedback }}
+{% endif %}
+{{ messages }}
+{% if page.before_content %}
+    {{ page.before_content }}
+{% endif %}
+{# Replace content_fields #}
+{% block replaceable %}
+    {% if page.content %}
+        <!-- START BLOG SECTION -->
+        <section id='content-area' class="container blog-page">
+            <div class="row">
+                {% if blog_layout == 'fullwidth' %}
+                    {% if blog_style == 'grid2cols' or blog_style == 'grid3cols' or blog_style == 'grid4cols' %}
+                        <div class="col-md-12">
+                            <div class="row">
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    {% elseif blog_style == 'masonry2cols' or blog_style == 'masonry3cols' or blog_style == 'masonry4cols' %}
+                        <div class="col-md-12">
+                            <div class="row masonry-container">
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-md-12">
+                            {{ page.content }}
+                        </div>
+                    {% endif %}
+                {% elseif blog_layout == 'right' %}
+                    {% if blog_style == 'grid2cols' or blog_style == 'grid3cols' or blog_style == 'grid4cols' %}
+                        <div class="col-md-8">
+                            <div class="row">
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    {% elseif blog_style == 'masonry2cols' or blog_style == 'masonry3cols' or blog_style == 'masonry4cols' %}
+                        <div class="col-md-8">
+                            <div class="row masonry-container">
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-md-8">
+                            {{ page.content }}
+                        </div>
+                    {% endif %}
+                    {% if page.sidebar %}
+                        <div class="col-md-3 col-md-offset-1">
+                            <!-- START SIDEBAR -->
+                            <div class="sidebar">
+                                {{ page.sidebar }}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% else %}
+                    {% if page.sidebar %}
+                        <div class="col-md-3">
+                            <!-- START SIDEBAR -->
+                            <div class="sidebar">
+                                {{ page.sidebar }}
+                            </div>
+                        </div>
+                    {% endif %}
+                    {% if blog_style == 'grid2cols' or blog_style == 'grid3cols' or blog_style == 'grid4cols' %}
+                        <div class="col-md-8 col-md-offset-1">
+                            <div class="row">
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    {% elseif blog_style == 'masonry2cols' or blog_style == 'masonry3cols' or blog_style == 'masonry4cols' %}
+                        <div class="col-md-8 col-md-offset-1">
+                            <div class="row masonry-container">
+                                {{ page.content }}
+                            </div>
+                        </div>
+                    {% else %}
+                        <div class="col-md-8 col-md-offset-1">
+                            {{ page.content }}
+                        </div>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}
+
+{% if page.after_content %}
+    {{ page.after_content }}
+{% endif %}
+
+
+<footer id="footer" class="footer clearfix">
+    {% if page.footer_first and page.footer_second and page.footer_third and page.footer_fourth %}
+        <div id="footer-main" class="footer-forth container">
+            <div class="footer-sub col-md-3 col-sm-6 p-none-left">
+                {{ page.footer_first }}
+            </div>
+            <div class="footer-sub col-md-3 col-sm-6">
+                {{ page.footer_second }}
+            </div>
+            <div class="footer-sub col-md-3 col-sm-6">
+                {{ page.footer_third }}
+            </div>
+            <div class="footer-sub col-md-3 col-sm-6 ">
+                {{ page.footer_fourth }}
+            </div>
+        </div>
+    {% elseif page.footer_first and page.footer_second and page.footer_third %}
+        <div id="footer-main" class="footer-third container">
+            <div class="footer-sub col-md-4 col-sm-6">
+                {{ page.footer_first }}
+            </div>
+            <div class="footer-sub col-md-4 col-sm-6">
+                {{ page.footer_second }}
+            </div>
+            <div class="footer-sub col-md-4 col-sm-6">
+                {{ page.footer_third }}
+            </div>
+        </div>
+    {% elseif page.footer_first and page.footer_second %}
+        <div id="footer-main" class="footer-second container ">
+            <div class="footer-sub col-md-6 col-sm-6">
+                {{ page.footer_first }}
+            </div>
+            <div class="footer-sub col-md-6 col-sm-6">
+                {{ page.footer_second }}
+            </div>
+        </div>
+    {% elseif page.footer_first %}
+        <div id="footer-main" class="footer-first container">
+            <div class="footer-sub  col-md-4 col-sm-6">
+                {{ page.footer_first }}
+            </div>
+        </div>
+    {% endif %}
+    {% if page.footer_copyright %}
+        <div id="footer-copyright">
+            <div class="container">
+                {{ page.footer_copyright }}
+            </div>
+        </div>
+    {% endif %}
+</footer>

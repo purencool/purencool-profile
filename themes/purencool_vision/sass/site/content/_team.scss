@@ -1,0 +1,129 @@
+
+
+/*---------------------------------------
+TEAM
+-----------------------------------------*/
+.team{
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+/*team style one*/
+.single_team_one{
+}
+
+.team_image{
+  position: relative;
+  overflow: hidden;
+}
+.team_image img{
+  width: 100%;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.single_team_one:hover .team_image img{
+  opacity: .8;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+
+.single_team_one h2{
+  color: #333;
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0px;
+  margin-top: 30px;
+}
+.single_team_one p{
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #585858;
+  margin-top: 40px;
+  margin: 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.single_team_one:hover .team_desc{
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+
+.team_desc{
+  background-color: #111;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  -o-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.team_desc h4{
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0px;
+  margin-bottom: 20px;
+}
+.team_desc p{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  color: #585858;
+  margin-top: 40px;
+  margin: 0px;
+  letter-spacing: 0;
+  text-transform: capitalize;
+}
+.team_desc ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+  padding-top: 10px;
+}
+.team_desc ul li{
+  display: inline;
+}
+.team_desc ul li a{
+  display: inline-block;
+  padding: 7px;
+}
+.team_desc ul li a:hover i{
+  color: #1cbac8;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+.team_desc ul li a i{
+  color: #7a7a7a;
+  font-size: 15px;
+  -webkit-transition: all .5s;
+  -o-transition: all .5s;
+  transition: all .5s;
+}
+@media(max-width: 991px){
+  .single_team_one{
+    padding-bottom: 50px;
+  }
+}

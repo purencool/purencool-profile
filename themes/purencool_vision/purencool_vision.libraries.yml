@@ -1,0 +1,49 @@
+global-styling:
+    version: VERSION
+    css:
+        theme:
+            css/cubeportfolio.min.css: {}
+            fonts/font-awesome/css/font-awesome.min.css: {}
+            css/pe-icon-7-stroke.css: {}
+            css/etline.css: {}
+            css/simpletextrotator.css: {}
+            css/lightbox.css: {}
+            css/hover.css: {}
+            css/bootstrap.css: {}
+            css/update.css: {}
+            css/style.css: {}
+            css/master-maintenance-style.css: {}
+            /sites/default/files/browser-development/css/background.css: {}
+            /sites/default/files/browser-development/css/background-image.css: {}
+            /sites/default/files/browser-development/css/alink.css: {}
+
+global-scripts:
+    version: VERSION
+    js:
+        js/smoothscroll.js: {}
+        #js/menuzord.js: {}
+        js/jquery.cubeportfolio.min.js: {}
+        js/jquery.parallax-1.1.3.js: {}
+        js/imagesloaded.pkgd.min.js: {}
+        js/masonry.pkgd.js: {}
+        js/jquery.counterup.min.js: {}
+        #js/jquery.ajaxchimp.min.js: {}
+        js/jquery.fitvids.js: {}
+        js/waypoints.min.js: {}
+        js/jquery.simple-text-rotator.js: {}
+        js/typed.js: {}
+        js/lightbox.js: {}
+        js/portfolio.js: {}
+        js/idangerous.swiper.js: {}
+        #//maps.googleapis.com/maps/api/js?key=AIzaSyDVLVTlCJI6jdle-QZECbhDvaA5pJffDZ0: { type: external }
+        #js/map.js: {}
+        js/script.js: {}
+
+        #js/update.js: {}
+
+    dependencies:
+    - core/jquery
+    - core/drupal.ajax
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

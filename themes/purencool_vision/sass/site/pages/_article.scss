@@ -1,0 +1,8 @@
+.article {
+  article {
+    padding-bottom: 100px;
+    > div > div{
+      padding-bottom:20px;
+    }
+  }
+}

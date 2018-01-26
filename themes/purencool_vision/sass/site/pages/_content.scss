@@ -1,0 +1,11 @@
+#content-area{
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: inherit;
+    padding-top: 120px;
+
+    .block-core.block-page-title-block {
+        text-indent: -9999px;
+        height: 0;
+    }
+}

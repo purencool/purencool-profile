@@ -1,0 +1,17 @@
+.branding {
+  img {
+    display: block;
+    max-width: 220px;
+    min-width: 100px;
+    margin-left: 16px;
+  }
+}
+
+
+@include mobile-break-points('tablet', "min") {
+ .branding {
+   img {
+     margin-left: 0;
+   }
+ }
+}

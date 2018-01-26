@@ -1,0 +1,21 @@
+/** These are things to be changed**/
+body.maintenance-page  {
+    background-color:#21409a;
+    color:white !important;
+}
+
+body.maintenance-page p  {
+    color:white ;
+}
+
+
+body.maintenance-page  #logo {
+    margin-top: -8px;
+    width: 80px;
+    height: 90px;
+    background: url("../logo.png") no-repeat ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}

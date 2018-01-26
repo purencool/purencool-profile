@@ -1,0 +1,11 @@
+{
+  "name": "drupal/purencool",
+  "type": "drupal-module",
+  "description": "Small organization solution.",
+  "homepage": "http://drupal.org/project/purencool",
+  "license": "GPL-3.0+",
+  "require": {
+    "drupal/core": "~8.4"
+  },
+  "minimum-stability": "stable"
+}

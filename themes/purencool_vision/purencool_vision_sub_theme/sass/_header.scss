@@ -1,0 +1,7 @@
+.section-title {
+  h4 {
+    margin: 0;
+    //format-text-all($color, $font-s, $font-w, $font-st, $font-f,$text-t,$letter-s)
+    @include format-text-all($baseColor, 9px, 700, italic, $firstFontType, uppercase, 3px);
+  }
+}

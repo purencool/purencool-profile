@@ -1,0 +1,25 @@
+
+/*
+ * Global variables
+ */
+$breakpoints: (
+        "phone-small":  349px,
+        "phone":        399px,
+        "phone-wide":   479px,
+        "phablet":      559px,
+        "tablet-small": 639px,
+        "tablet":       767px,
+        "tablet-wide":  1023px,
+        "desktop":      1247px,
+        "desktop-wide": 1439px
+);
+
+$baseColor: #585858;
+$baseMenuColor: #333333;
+$baseDropDownMenuBackgroundColor:rgba(34,34,34,.97);
+$baseDropDownMenuColor:#cacaca;
+$baseBorderColor: #f0f0f0;
+$baseBackgroundColor: white;
+$baseFontType:'Open Sans', sans-serif;
+$firstFontType: 'Merriweather', serif;
+$secondFontType: 'Merriweather', serif;

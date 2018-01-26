@@ -1,0 +1,252 @@
+{#
+/**
+ * @file
+ * Theme override to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ */
+#}
+{% if view.current_display == 'block_about_style1' or view.current_display == 'block_about_style3' or view.current_display == 'block_about_style4' or view.current_display == 'block_about_style5' or view.current_display == 'block_about_style6' or view.current_display == 'block_about_style1b' or view.current_display == 'block_about_style5b' or view.current_display == 'block_about_style4b' %}
+	{% if rows %}
+		{% if header %}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- START SECTION TITLE -->
+                    <div class="section_title">
+	    				{{ header }}
+	    			</div>
+	    		</div>
+	  		</div>
+	  	</div>
+	  	{% endif %}
+	  	<div class="promo_box_s_one">
+            <div class="container">
+                <div class="row">
+                	{{ rows }}
+                </div>
+            </div>
+        </div>
+        {{ footer }}
+	{% endif %}
+{% elseif view.current_display == 'block_features_style2' or view.current_display == 'block_features_style2b' or view.current_display == 'block_features_style2c' %}
+	{% if rows %}
+		{{ header }}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-6">
+                    <div class="li_right_features">
+						{{ rows }}
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endif %}
+{% elseif view.current_display == 'block_client_carousel_style' %}
+	{% if rows %}
+		{% if header %}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- START SECTION TITLE -->
+                    <div class="section_title">
+	    				{{ header }}
+	    			</div>
+	    		</div>
+	  		</div>
+	  	</div>
+	  	{% endif %}
+	  	<div class="inner_client_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- CLIENT LOGO -->
+                        <div id="client-carosel" class="client_slider">
+                        	{{ rows }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endif %}
+{% elseif view.current_display == 'block_client_gird_style2' %}
+	{% if rows %}
+		{% if header %}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- START SECTION TITLE -->
+                    <div class="section_title">
+	    				{{ header }}
+	    			</div>
+	    		</div>
+	  		</div>
+	  	</div>
+	  	{% endif %}
+	  	<div class="client_inner_two">
+            <div class="container">
+                <div class="row">
+                    {{ rows }}
+                </div>
+            </div>
+        </div>
+	{% endif %}
+{% elseif view.current_display == 'block_services_tab_style' or view.current_display == 'block_services_tab_style1b' %}
+	{% if rows %}
+		{% if header %}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- START SECTION TITLE -->
+                    <div class="section_title">
+	    				{{ header }}
+	    			</div>
+	    		</div>
+	  		</div>
+	  	</div>
+	  	{% endif %}
+	  	<div class="container-fluid">
+            <div class="row no_margin">
+                <div class="col-md-12 no_padding">
+                    <div class="service_tab">
+                    	{% if attachment_before %}
+                    	<ul class="nav nav-tabs" role="tablist">
+                    		{{ attachment_before|render|str_replace_first('li role="presentation"', 'li role="presentation" class="active"')|raw  }}
+                    	</ul>
+                    	{% endif %}
+                        <!-- START NAV TABS -->
+						<!-- Tab panes -->
+                        <div class="tab-content">
+                        	{{ rows|render|str_replace_first('tab-pane fade', 'tab-pane fade in active')|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endif %}
+{% elseif view.current_display == 'block_our_team_style1' or view.current_display == 'block_our_team_style1b' or view.current_display == 'block_features_style3' %}
+	{% if rows %}
+	<div class="container">
+		{% if header %}
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<!-- START SECTION TITLE -->
+				<div class="section_title">
+					{{ header }}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+		<div class="row">
+			{{ rows }}
+		</div>
+	</div>
+	{% endif %}
+{% elseif view.current_display == 'block_testimonial_carousel_style1' %}
+	{% if rows %}
+	<div class="testimonial_bg fixed_bg testimonial-parallax">
+		<div class="testimonial_overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div class="inner_testimonial_info">
+							<!-- START TESTIMONIAL TITLE -->
+							{{ header }}
+							<!-- START TESTIMONIAL CAROSEL  -->
+							<div id="testimonial_carosel_1" class="carousel slide" data-ride="carousel">
+							{% set n = rows|render|substr_count('item') %}
+								<!-- START Indicators -->
+                                <ol class="carousel-indicators">
+								{% for i in 0..n-1 %}
+									<li data-target="#testimonial_carosel_1" data-slide-to="{{ i }}" class="{{loop.first ? 'active' : ''}}"></li>
+								{% endfor %}
+                                </ol>
+								<!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+									{{ rows }}
+                                </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	{% endif %}
+{% elseif view.current_display == 'block_client_gird_style' %}
+	{% if rows %}
+		{% if header %}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- START SECTION TITLE -->
+                    <div class="section_title">
+	    				{{ header }}
+	    			</div>
+	    		</div>
+	  		</div>
+	  	</div>
+	  	{% endif %}
+	  	<div class="client_two clearfix">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                    	{{ rows }}
+                    </div>
+                </div>
+            </div>
+        </div>
+	{% endif %}
+{% elseif view.current_display == 'block_features_style1' %}
+	{% if rows %}
+		{% if header %}
+		<div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <!-- START SECTION TITLE -->
+                    <div class="section_title">
+	    				{{ header }}
+	    			</div>
+	    		</div>
+	  		</div>
+	  	</div>
+	  	{% endif %}
+	  	<div class="inner_mobile_features">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="left_m_features">
+							{{ rows }}
+                        </div>
+                    </div>
+                    {% if footer %}
+					<div class="col-md-4">
+                        <div class="m_features_image">
+							{{ footer }}
+                        </div>
+                    </div>
+                    {% endif %}
+                	{% if attachment_after %}
+					<div class="col-md-4">
+                        <div class="right_m_features">
+                        	{{ attachment_after }}
+                        </div>
+                    </div>
+                	{% endif %}
+                </div>
+            </div>
+        </div>
+	{% endif %}
+{% else %}
+	{{ header }}
+	{{ rows }}
+{% endif %}
