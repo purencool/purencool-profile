@@ -4,8 +4,22 @@
   "description": "Small organization solution.",
   "homepage": "http://drupal.org/project/purencool",
   "license": "GPL-3.0+",
-  "require": {
-    "drupal/core": "~8.4"
-  },
-  "minimum-stability": "stable"
+  "repositories": {
+        "drupal": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        }
+    },
+   "minimum-stability": "dev",
+   "require" : {
+      "drupal/admin_toolbar" : "*",
+      "drupal/pathauto" : "*"
+   },
+   "extra": {
+        "installer-paths": {
+            "./libraries/{$name}": ["type:drupal-library"],
+            "./modules/contrib/{$name}": ["type:drupal-module"],
+            "./themes/contrib/{$name}": ["type:drupal-theme"]
+        }
+    }
 }
