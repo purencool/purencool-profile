@@ -44,6 +44,9 @@ dependencies:
   - responsive_image
   - telephone
 
+  # Contributed modules
+  - admin_toolbar
+
 themes:
   - purencool_vision
   - seven
