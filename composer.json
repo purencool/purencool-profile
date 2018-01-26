@@ -13,13 +13,8 @@
    "minimum-stability": "dev",
    "require" : {
       "drupal/admin_toolbar" : "*",
+      "drupal/ctools" : "*",
       "drupal/pathauto" : "*"
-   },
-   "extra": {
-        "installer-paths": {
-            "./libraries/{$name}": ["type:drupal-library"],
-            "./modules/contrib/{$name}": ["type:drupal-module"],
-            "./themes/contrib/{$name}": ["type:drupal-theme"]
-        }
-    }
+      "drupal/token" : "*",
+   }
 }
