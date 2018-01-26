@@ -13,6 +13,7 @@
 	"minimum-stability": "dev",
 	"require": {
 		"drupal/admin_toolbar": "*",
+		"drupal/bootstrap": "*",
 		"drupal/ctools": "*",
 		"drupal/pathauto": "*",
 		"drupal/token": "*"

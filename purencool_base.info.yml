@@ -48,7 +48,7 @@ dependencies:
   - admin_toolbar
 
 themes:
-
+  - bootstrap
   - seven
 
 
