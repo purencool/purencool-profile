@@ -1,20 +1,20 @@
 {
-  "name": "purencool/purencool",
-  "type": "drupal-profile",
-  "description": "Small organization solution.",
-  "homepage": "http://drupal.org/project/purencool",
-  "license": "GPL-3.0+",
-  "repositories": {
-        "drupal": {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    },
-   "minimum-stability": "dev",
-   "require" : {
-      "drupal/admin_toolbar" : "*",
-      "drupal/ctools" : "*",
-      "drupal/pathauto" : "*",
-      "drupal/token" : "*"
-   }
+	"name": "purencool/purencool_base",
+	"type": "drupal-profile",
+	"description": "Small organization solution.",
+	"homepage": "http://drupal.org/project/purencool",
+	"license": "GPL-3.0+",
+	"repositories": {
+		"drupal": {
+			"type": "composer",
+			"url": "https://packages.drupal.org/8"
+		}
+	},
+	"minimum-stability": "dev",
+	"require": {
+		"drupal/admin_toolbar": "*",
+		"drupal/ctools": "*",
+		"drupal/pathauto": "*",
+		"drupal/token": "*"
+	}
 }
