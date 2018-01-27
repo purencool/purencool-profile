@@ -151,7 +151,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   protected function importPages() {
-    if (($handle = fopen($this->moduleHandler->getModule('purenool_content')->getPath() . '/default_content/pages.csv', "r")) !== FALSE) {
+    if (($handle = fopen($this->moduleHandler->getModule('purencool_content')->getPath() . '/default_content/pages.csv', "r")) !== FALSE) {
 			$headers = fgetcsv($handle);
       $uuids = [];
       while (($data = fgetcsv($handle)) !== FALSE) {
@@ -194,7 +194,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   public function deleteImportedContent() {
-    $uuids = $this->state->get('purencool_content_content_uuids', []);
+    $uuids = $this->state->get('purencool_content_uuids', []);
 		$by_entity_type = array_reduce(array_keys($uuids), function ($carry, $uuid) use ($uuids) {
       $entity_type_id = $uuids[$uuid];
       $carry[$entity_type_id][] = $uuid;
