@@ -14,7 +14,7 @@ use Drupal\Component\Utility\Html;
  * Defines a helper class for importing default content.
  *
  * @internal
- *   This code is only for use by the Umami demo: Content module.
+ *   This code is only for use by the Purencool Content module.
  */
 class InstallHelper implements ContainerInjectionInterface {
 
@@ -151,7 +151,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * @return $this
    */
   protected function importPages() {
-    if (($handle = fopen($this->moduleHandler->getModule('purenool_umami_content')->getPath() . '/default_content/pages.csv', "r")) !== FALSE) {
+    if (($handle = fopen($this->moduleHandler->getModule('purenool_content')->getPath() . '/default_content/pages.csv', "r")) !== FALSE) {
 			$headers = fgetcsv($handle);
       $uuids = [];
       while (($data = fgetcsv($handle)) !== FALSE) {
