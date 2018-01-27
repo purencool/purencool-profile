@@ -48,6 +48,8 @@ dependencies:
   - admin_toolbar
   - metatag
 
+  # Dummy content
+  - purencool_content
 themes:
   - bootstrap
   - seven
