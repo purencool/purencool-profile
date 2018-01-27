@@ -51,7 +51,7 @@ dependencies:
   # Dummy content
   - purencool_content
 themes:
-  - bootstrap
+  - purencool_vision
   - seven
 
 
