@@ -13,10 +13,24 @@
 	"minimum-stability": "dev",
 	"require": {
 		"drupal/admin_toolbar": "*",
+		"drupal/advagg": "*",
+		"drupal/better_exposed_filters": "*",
 		"drupal/bootstrap": "*",
+		"drupal/crop": "*",
+		"drupal/contact_storage": "*",
 		"drupal/ctools": "*",
+		"drupal/formblock": "*",
+		"drupal/google_analytics": "*",
+		"drupal/honeypot": "*",
+		"drupal/libraries": "*",
 		"drupal/metatag": "*",
 		"drupal/pathauto": "*",
+		"drupal/redirect": "*",
+		"drupal/responsive_menu": "*",
+		"drupal/simple_gmap": "*",
+		"drupal/simple_sitemap": "*",
+		"drupal/slick": "*",
+		"drupal/social_media": "*",
 		"drupal/token": "*"
 	}
 }
