@@ -14,7 +14,6 @@ dependencies:
   - ckeditor
   - color
   - config
-  #- comment
   - contextual
   - contact
   - menu_link_content
@@ -45,9 +44,21 @@ dependencies:
   - responsive_image
   - telephone
 
-  # Contributed modules
+  # Contributed non production modules
   - admin_toolbar
+  - admin_toolbar_tools
+  - features
+
+  # Contributed production modules
+  - contribute
   - metatag
+  - paragraphs
+
+  # Custom modules
+
+
+  # Features
+
 
   # Dummy content
   - purencool_content
