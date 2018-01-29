@@ -50,9 +50,24 @@ dependencies:
   - features
 
   # Contributed production modules
+  - better_exposed_filters
+  - contact_storage
   - contribute
+  - crop
+  - ctools
+  - formblock
+  - google_analytics
+  - honeypot
+  - libraries
   - metatag
   - paragraphs
+  - pathauto
+  - redirect
+  - schema_metatag
+  - simple_gmap
+  - simple_sitemap
+  - social_media
+  - token
 
   # Custom modules
 

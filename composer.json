@@ -31,10 +31,11 @@
 		"drupal/pathauto": "*",
 		"drupal/redirect": "*",
 		"drupal/responsive_menu": "*",
+		"drupal/schema_metatag": "*",
+		"drupal/social_media": "*",
 		"drupal/simple_gmap": "*",
 		"drupal/simple_sitemap": "*",
 		"drupal/slick": "*",
-		"drupal/social_media": "*",
 		"drupal/token": "*"
 	}
 }
