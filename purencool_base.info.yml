@@ -14,6 +14,7 @@ dependencies:
   - ckeditor
   - color
   - config
+  - comment
   - contextual
   - contact
   - menu_link_content
@@ -51,6 +52,7 @@ dependencies:
   # Dummy content
   - purencool_content
 themes:
+  - bartik
   - purencool_vision
   - seven
 

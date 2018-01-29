@@ -13,10 +13,10 @@ use Drupal\shortcut\Entity\Shortcut;
  */
 function purencool_base_install() {
 	// Can add code in here to make nodes, terms, etc.
-	\Drupal::configFactory()
-		->getEditable('system.purencool_vision')
-		->set('default', 'base')
-		->save();
+	//\Drupal::configFactory()
+	//->getEditable('system.purencool_vision')
+	//->set('default', 'base')
+	//->save();
 
 	\Drupal::configFactory()
 		->getEditable('system.theme')
