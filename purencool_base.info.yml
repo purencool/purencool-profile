@@ -48,6 +48,7 @@ dependencies:
   - admin_toolbar
   - admin_toolbar_tools
   - features
+  - features_ui
 
   # Contributed production modules
   - better_exposed_filters
