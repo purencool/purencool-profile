@@ -15,6 +15,7 @@
 		"drupal/admin_toolbar": "*",
 		"drupal/advagg": "*",
 		"drupal/better_exposed_filters": "*",
+		"drupal/block_field": "*",
 		"drupal/browser_development": "1.x-dev",
 		"drupal/bootstrap": "*",
 		"drupal/contact_storage": "*",

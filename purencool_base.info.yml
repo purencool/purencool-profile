@@ -52,6 +52,7 @@ dependencies:
 
   # Contributed production modules
   - better_exposed_filters
+  - block_field
   - contact_storage
   - contribute
   - crop
