@@ -1,0 +1,13 @@
+name: Video
+description: 'Provides Video content type and related configuration. Online videos you want to show users'
+type: module
+core: 8.x
+dependencies:
+  - field
+  - menu_ui
+  - node
+  - path
+  - text
+  - user
+  - video_embed_field
+version: 8.x-4.0

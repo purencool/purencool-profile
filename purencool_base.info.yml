@@ -73,7 +73,7 @@ dependencies:
   - video_embed_field
 
   # Custom modules
-
+  - purencool_video
 
   # Features
 
