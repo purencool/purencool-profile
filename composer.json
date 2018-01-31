@@ -37,6 +37,7 @@
 		"drupal/simple_gmap": "*",
 		"drupal/simple_sitemap": "*",
 		"drupal/slick": "*",
-		"drupal/token": "*"
+		"drupal/token": "*",
+		"drupal/video_embed_field": "*"
 	}
 }
