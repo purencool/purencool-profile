@@ -82,7 +82,7 @@ class InstallHelper implements ContainerInjectionInterface {
    */
   public function importContent() {
     $this->importArticles()
-      ->importPages();
+      ->importPages()->importVideos();
 	}
 
 	/**
@@ -144,8 +144,54 @@ class InstallHelper implements ContainerInjectionInterface {
     return $this;
   }
 
+		/**
+	 * Imports articles.
+	 *
+	 * @return $this
+	 */
+	protected function importVideos() {
+		$module_path = $this->moduleHandler->getModule('purencool_content')
+			->getPath();
+		if (($handle = fopen($module_path . '/default_content/videos.csv', "r")) !== FALSE) {
+			$uuids = [];
+			$header = fgetcsv($handle);
+			while (($data = fgetcsv($handle)) !== FALSE) {
+				$data = array_combine($header, $data);
+				// Prepare content.
+				$values = [
+					'type' => 'video',
+					'title' => $data['title'],
+				];
+				// Fields mapping starts.
+				// Set Body Field.
+				if (!empty($data['body'])) {
+					$values['body'] = [['value' => $data['body'], 'format' => 'full_html']];
+				}
+				// Set node alias if exists.
+				if (!empty($data['slug'])) {
+					$values['path'] = [['alias' => '/' . $data['slug']]];
+				}
+				// Set field_tags if exists.
+				if (!empty($data['video'])) {
+					$values['field_video'] = [['value' => $data['video']]];
+				}
+				// Set article author.
+				if (!empty($data['author'])) {
+					$values['uid'] = $this->getUser($data['author']);
+				}
 
-  /**
+				// Create Node.
+				$node = $this->entityTypeManager->getStorage('node')->create($values);
+				$node->save();
+				$uuids[$node->uuid()] = 'node';
+			}
+			$this->storeCreatedContentUuids($uuids);
+			fclose($handle);
+		}
+		return $this;
+	}
+
+	/**
    * Imports pages.
    *
    * @return $this
