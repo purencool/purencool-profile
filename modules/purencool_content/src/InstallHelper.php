@@ -81,8 +81,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * Imports default contents.
    */
   public function importContent() {
-    $this->importArticles()
-      ->importPages()->importVideos();
+    $this->importVideos()->importPages()->importArticles();
 	}
 
 	/**
@@ -144,15 +143,15 @@ class InstallHelper implements ContainerInjectionInterface {
     return $this;
   }
 
-		/**
-	 * Imports articles.
+	/**
+	 * Imports video.
 	 *
 	 * @return $this
 	 */
 	protected function importVideos() {
 		$module_path = $this->moduleHandler->getModule('purencool_content')
 			->getPath();
-		if (($handle = fopen($module_path . '/default_content/videos.csv', "r")) !== FALSE) {
+		if (($handle = fopen($module_path . '/default_content/video.csv', "r")) !== FALSE) {
 			$uuids = [];
 			$header = fgetcsv($handle);
 			while (($data = fgetcsv($handle)) !== FALSE) {
@@ -192,10 +191,10 @@ class InstallHelper implements ContainerInjectionInterface {
 	}
 
 	/**
-   * Imports pages.
-   *
-   * @return $this
-   */
+	 * Imports pages.
+	 *
+	 * @return $this
+	 */
   protected function importPages() {
     if (($handle = fopen($this->moduleHandler->getModule('purencool_content')->getPath() . '/default_content/pages.csv', "r")) !== FALSE) {
 			$headers = fgetcsv($handle);
