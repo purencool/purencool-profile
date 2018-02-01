@@ -13,3 +13,5 @@ dependencies:
   - taxonomy
   - text
   - user
+  - video_embed_field
+  - purencool_video

@@ -81,7 +81,7 @@ class InstallHelper implements ContainerInjectionInterface {
    * Imports default contents.
    */
   public function importContent() {
-    $this->importVideos()->importPages()->importArticles();
+		$this->importVideos()->importPages()->importArticles();
 	}
 
 	/**
