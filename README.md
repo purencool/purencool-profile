@@ -1,4 +1,4 @@
-# Purencool base profile
+# Purencool Base Profile
 
 This profile sets a Drupal 8 basic website configuration and it is strongly influenced by the standard profile in core. The main focus of this code is to implement and configure a number of contributed modules, so that the installation of the contributed modules are already enabled.
 
